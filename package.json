@@ -1,0 +1,62 @@
+{
+  "name": "cobra",
+  "productName": "Cobra",
+  "version": "1.0.0",
+  "description": "Baublbar's image resizing, optimization, and cloud storage upload application. Main build creates native app. Secondary acts as a webapp plugin. Delicious.",
+  "license": "MIT",
+  "repository": "DaneTheory/cobra",
+  "author": {
+    "name": "Branden Dane",
+    "email": "branden@danetheory.com",
+    "url": "danetheory.com"
+  },
+  "engines": {
+    "node": ">=4",
+    "electron": ">=0.33.0"
+  },
+  "electronVersion": "0.33.0",
+  "scripts": {
+    "test": "xo",
+    "start": "electron .",
+    "buildAll": "electron-packager . $npm_package_productName --out=dist --ignore='^/dist$' --prune --asar --all --version=$npm_package_electronVersion",
+    "buildOSX": "electron-packager . Cobra --platform=darwin --arch=x64 --version=0.33.1 --icon=./assets/icon.icns --out=dist --ignore='^/dist$' --prune --asar --overwrite"
+  },
+  "files": [
+    "index.js",
+    "preload.js",
+    "config.js",
+    "controller.js",
+    "router.js",
+    "server.js",
+    "console-hook.js",
+    "rend.js",
+    "index.html",
+    "custom.js",
+    "index.css",
+    "assets",
+    "node_modules"
+  ],
+  "keywords": [
+    "baublebar image resize optimization"
+  ],
+  "dependencies": {
+    "electron-debug": "^0.1.1",
+    "fix-path": "^1.1.0",
+    "fs-extra": "^0.24.0",
+    "http": "0.0.0",
+    "is-electron-renderer": "^2.0.0",
+    "request": "^2.63.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^5.0.0",
+    "electron-prebuilt": "^0.33.0",
+    "xo": "^0.9.0"
+  },
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "node",
+      "browser"
+    ]
+  }
+}
