@@ -2,22 +2,22 @@ html,
 body {
 	padding: 0;
 	margin: 0;
+	-webkit-app-region: drag;
+	overflow: hidden;
 }
 
 header {
 	position: absolute;
 	width: 500px;
 	height: 250px;
-	top: 50%;
-	left: 50%;
-	margin-top: -125px;
-	margin-left: -250px;
-	text-align: center;
+	top: 84%;
+	left: 65%;
+	-webkit-app-region: no-drag;
 }
 
 header h1 {
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 60px;
+	font-size: 65px;
 	font-weight: 100;
 	margin: 0;
 	padding: 0;
@@ -54,6 +54,8 @@ input[type="file"] {
 	overflow: scroll;
 	overflow-x: hidden;
 	text-align: center;
+	-webkit-app-region: no-drag;
+	cursor: pointer;
 }
 
 #dropzone span {
@@ -96,6 +98,29 @@ input[type="file"] {
   margin: auto;
   text-align: center;
   width: 80%;
+	-webkit-app-region: no-drag;
+}
+
+.appControls {
+	display: flex;
+	position: absolute;
+	left: 85%;
+	top: 92%;
+}
+
+.settings svg {
+	margin-right: 1.5em;
+	position: relative;
+	display: inline-block;
+	top: 1.5em;
+	-webkit-app-region: no-drag;
+	cursor: pointer;
+}
+
+
+.powerButton svg {
+	-webkit-app-region: no-drag;
+	cursor: pointer;
 }
 
 @media (max-width: 767px) {

@@ -1,3 +1,49 @@
+// MODULES
+var path = require('path');
+var fs = require('fs-extra');
+var ipc = require('ipc');
+
+
+// CUSTOM MODULES
+var config = require('./config');
+var origDir = path.join('file://', __dirname, 'uploads', 'orginal');
+//console.log(dir);
+
+// GLOBALS
+var orgDir = config.upload_dir;
+var closeCobra = document.querySelector('.powerButton');
+
+// NOTIFICATIONS SETUP
+var alertOptions = {
+	title: "Cobra Alert!",
+	body: "Cobra, up and running. Cheers!",
+	icon: path.join(__dirname, 'assets', 'beer.png')
+};
+
+function doNotify() {
+	new Notification(alertOptions.title, alertOptions);
+};
+
+document.addEventListener('DOMContentLoaded', doNotify);
+
+// CLOSE APP SETUP
+closeCobra.addEventListener('click', function() {
+	ipc.send('close-main-window');
+});
+
+// FILE UPLOAD SETUP
+// fs.readDir(orgDir, function(dir) {
+// 	for (var i = 0, l = dir.length; i < l; i++) {
+// 		var filePath = dir[i];
+// 		console.log(filePath);
+// 	};
+// 	console.log(orgDir);
+// });
+fs.ensureDir(origDir, function(err) {
+	console.log(err) // => null
+		// dir has now been created, including the directory it is to be placed in
+})
+
 (function(window, document) {
 
 	'use strict';
