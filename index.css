@@ -46,7 +46,7 @@ input[type="file"] {
   clear: both;
 }
 
-#dropzone {
+#fileZone {
 	background-color: #f7f7f7;
 	border: 2px dashed #c7c7c7;
 	height: 500px;
@@ -58,21 +58,21 @@ input[type="file"] {
 	cursor: pointer;
 }
 
-#dropzone span {
+#fileZone span {
   font-size: 2em;
 	position: relative;
 	top: 45%;
 }
 
-#dropzone.queue {
+#fileZone.queue {
   background-color: #fff;
 }
 
-#dropzone.queue span {
+#fileZone.queue span {
   display: none;
 }
 
-#dropzone .file {
+#fileZone .file {
 	background-color: #fafafa;
   border-bottom: #e7e7e7 1px solid;
 	color: #808080;
@@ -81,7 +81,7 @@ input[type="file"] {
 	text-align: left;
 }
 
-#dropzone .file .name {
+#fileZone .file .name {
 	float: left;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -89,7 +89,7 @@ input[type="file"] {
 	width: 90%;
 }
 
-#dropzone .file .progress {
+#fileZone .file .progress {
 	float: right;
 	width: 10%;
 }
@@ -133,17 +133,17 @@ input[type="file"] {
   body {
     font-size: 0.8em;
   }
-  #dropzone {
+  #fileZone {
     border: none;
     height: 100%;
     margin: 0;
     width: 100%;
   }
-  #dropzone .file {
+  #fileZone .file {
     padding: 10px;
   }
-  #dropzone .file .name,
-  #dropzone .file .progress {
+  #fileZone .file .name,
+  #fileZone .file .progress {
     line-height: 1.8;
     width: 100%;
   }

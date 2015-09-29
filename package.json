@@ -32,7 +32,8 @@
     "http": "0.0.0",
     "is-electron-renderer": "^2.0.0",
     "nconf": "^0.8.0",
-    "request": "^2.63.0"
+    "request": "^2.63.0",
+    "sweetalert": "^1.1.0"
   },
   "devDependencies": {
     "electron-packager": "^5.0.0",

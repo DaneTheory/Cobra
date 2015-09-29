@@ -5,6 +5,7 @@ const crashReporter = require('crash-reporter');
 const path = require('path');
 const fixPath = require('fix-path');
 const ipc = require('ipc');
+
 crashReporter.start({
 	submitUrl: 'http://127.0.0.1:9999'
 });
@@ -58,6 +59,10 @@ function createMainWindow() {
 	return win;
 }
 
+ipc.on('close-main-window', function() {
+	app.quit();
+});
+
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
 		app.quit();
@@ -74,8 +79,4 @@ app.on('ready', () => {
 	crashServer.listen(9999, '127.0.0.1', function() {
 		mainWindow = createMainWindow();
 	});
-});
-
-ipc.on('close-main-window', function() {
-	app.quit();
 });
